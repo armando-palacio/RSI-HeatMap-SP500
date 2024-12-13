@@ -30,7 +30,7 @@ tables = pd.read_html(html_content)
 sp500_table = tables[0]
 
 # Extraer los tickers
-sp500_tickers = sp500_table["Symbol"].tolist()[:100]
+sp500_tickers = sp500_table["Symbol"].tolist()
 
 # Descargar datos de los tickers
 data = yf.download(sp500_tickers, period='3mo', interval='1d', group_by='ticker')
